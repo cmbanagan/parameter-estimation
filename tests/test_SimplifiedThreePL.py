@@ -112,5 +112,12 @@ class TestSimplifiedThreePL(unittest.TestCase):
     def test_integration(self):
         pass
 
+    
+    def test_invalid_slope_non_numeric(self):
+        with self.assertRaises(ValueError):
+            self.experiment = Experiment() 
+            self.experiment.add_condition(SignalDetection("one", "one", "one", "one"))
+
+
 if __name__ == "__main__":
     unittest.main()
